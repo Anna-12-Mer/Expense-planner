@@ -1,3 +1,7 @@
+import './widgets/user_transaction.dart';
+
+import './widgets/new_transaction.dart';
+import './widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -17,10 +21,23 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter App'),
-      ),
-      body: Center(child: Text('widget Playground!')),
-    );
+        appBar: AppBar(
+          title: Text('Flutter App'),
+        ),
+        body: Column(
+          //mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                child: Text('CHART!'),
+                color: Colors.blue,
+                elevation: 5,
+              ),
+            ),
+            UserTransaction()
+          ],
+        ));
   }
 }
